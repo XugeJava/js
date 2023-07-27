@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: green;
+            border-radius: 0cap;
+        }
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        .active {
+            width: 300px;
+            height: 300px;
+            background-color: hotpink;
+            /* margin-left: 100px; */
+        } 
+        .t1{
+            width: 300px;
+            height: 300px;
+            background-color: orange;
+            /* margin-left: 100px; */
+        }
+        .t2{
+            width: 300px;
+            height: 300px;
+            background-color: white;
+            /* margin-left: 100px; */
+        }
+        .t3{
+            width: 300px;
+            height: 300px;
+            background-color: #666;
+            /* margin-left: 100px; */
+        }
+        /* img{
+            height:500px;
+            width:500px; */
+
+        /* } */
+        span{
+            color:white;
+            font-size:20px;
+        }
+
+    </style>
+</head>
+<body>
+    <img src="" alt="">
+    <div>
+        <span>哔哩哔哩小年YEAH</span>
+    </div>
+    <script>
+        // const t1=document.querySelector("img");
+        // //修改属性值
+        // t1.width=500;
+        // t1.height=1000;
+        // t1.alt="你好啊"
+
+        // //修改元素样式属性
+        // //1.获取DOM节点
+        // const box=document.querySelector('.box')
+        // //2.修改样式
+        // box.style.color='red';
+        // box.style.width-'300px';
+        //box.style.backgroundColor='pink';
+        // 1. 获取图片元素
+        // const ele=document.querySelector('img');
+        // // 2. 随机得到图片序号  [0,1) [0,7) [1,8)]
+        // const num=getRandomIntInclusive=function(min,max){
+        //     min=Math.ceil(min);
+        //     max=Math.floor(max);
+        //     return Math.floor(Math.random()*(max-min+1)+min
+        // )}(1,6)
+        // //const num=Math.floor(Math.random()*6)+1;
+        // // 3. 图片.src = 图片随机路
+        // ele.src=`./${num}.webp`;
+        
+        // // 随机函数
+        // const num = getRandomIntInclusive = function (min, max) {
+        //     min=Math.ceil(min);
+        //     max=Math.floor(max);
+        //     return Math.floor(Math.random()*(max-min+1)+min
+        // )}(1,6)
+        // // css页面背景图片 background - image
+        // document.body.style.backgroundImage=`url(${num}.webp)`
+
+
+        //通过classList操作类控制CSS
+        // let box = document.querySelector('div')
+        // box.classList.add('box')
+
+        // //remove
+        // box.classList.remove('box')
+
+        // //toggle
+        // box.classList.toggle('active')
+
+        //1.实现随机图片
+        const num=getRandomNum=function(min,max){
+            min=Math.ceil(min);
+            max=Math.floor(max);
+            return Math.floor(Math.random()*(max-min+1)+min)
+        }(1,8);
+        let ele=document.querySelector('img')
+        ele.src= `slider0${num}.jpg`;
+
+        let arr=['凤凰传奇','暖雪发售','八年游戏策划','八年游戏策划','八年游戏策划', '八年游戏策划', '八年游戏策划', '八年游戏策划']
+        
+
+        
+    </script>
+</body>
+</html>

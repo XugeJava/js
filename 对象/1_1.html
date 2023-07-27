@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //生民1
+        let obj=new Object();
+        //生民2
+        let obj2={};
+
+        let product={
+            goods:'小米',
+            name:'小米小米10青春版',
+            num:10021324534,
+            weight:'0.55kg',
+            address:'中国大陆',
+            price:function(price){
+                return price;
+            },
+            sing:function(name){
+                console.log(name+'在唱歌..')
+            },
+            dance:function(name){
+                console.log(name+'在跳舞..')
+            }
+        }
+        console.log(product);
+        //查
+        console.log(product.goods)
+        console.log(product.name);
+        console.log(product.num);
+        //改
+        product.num=1213461234;
+        console.log(product.num);
+        //新增
+        product.age=20;
+        console.log(product)
+        //删除
+        delete product.age;
+        console.log(product)
+        //call method 
+        console.log(product.price(100));
+        //dynamic add method
+        product.move=function(name){
+            console.log(name+'在跑步..')
+        };
+        product.move('小米');
+
+        //遍历对象
+        for(let key in product){
+            console.log(key+"=>"+product[key]);
+        }
+
+    </script>
+</body>
+</html>

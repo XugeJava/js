@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // //原型继承
+        // const People={
+        //     head:1,
+        //     eyes:2,
+        //     legs:2,
+        //     say:function(){},
+        //     eat:function(){}
+        //}
+        //抽取一个公共的构造函数
+        function People(){
+            this.head= 1,
+            this.eyes=2,
+            this.legs=2,
+            this.say=function() { },
+            this.eat=function() { }
+        }
+        function Man(){
+
+        }
+        function Woman(){
+            this.baby=function(){};
+        }
+        //让Man的原型对象指向People,那么Man实现了继承
+        Man.prototype=new People();
+        //重新让Man的原型对象的const指回Man构造函数
+        Man.prototype.constructor=Man;
+        //同理
+        Woman.prototype=new People();
+        Woman.prototype.constructor=Woman;
+
+        const man=new Man();
+        const woman=new Woman();
+        console.log(man)
+        console.log(woman)
+
+        //add method to prototype
+        Man.prototype.test=function(){
+            console.log('test')
+        }
+        console.log(man)
+        console.log(woman)
+
+
+        
+
+
+
+    </script>
+</body>
+</html>

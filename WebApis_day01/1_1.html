@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>传值年会抽奖</div>
+    <h1>一等奖:<span></span></h1>
+    <h2>二等奖:<span class="a"></span></h2>
+    <h3>三等奖:<span id="t1"></span></h3>
+    <script>
+      
+        // a.innerHTML='<h4>嗨~ 我叫李雷！</h4>';
+
+        const personArr = ['周杰伦', '刘德华', '周星驰', 'Pink老师', '张学友']
+        let arr=[];
+        for(let i=1;i<=3;i++){
+            let index = Math.floor(Math.random() * 5);
+            arr.push(personArr[index]);
+        }
+        console.log(arr);
+        let ele=arr.shift();
+        //设置一等奖
+        document.querySelector('span').innerText=ele;
+        ele=arr.shift();
+        let ele1=document.getElementsByClassName('a')[0];
+        ele1.innerText=ele;
+        ele=arr.shift();
+
+        document.getElementById('t1').innerText=ele;
+
+
+
+
+    </script>
+</body>
+</html>

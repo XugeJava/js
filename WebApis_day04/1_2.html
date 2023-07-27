@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //获取当前时间戳
+        const now=Date.now();
+        //获取未来
+        const tom=new Date("2023-07-25 18:30:00");
+        console.log(tom)
+        const fu=tom.getTime();
+        const div=(fu-now)/1000;
+        let d=parseInt(div/60/60/24);
+        let h=parseInt(div/60/60%24);
+        let m=parseInt(div/60%60);
+        let s=parseInt(div%60)
+        document.write(d+"天"+h+"小时"+m+"分钟"+s+"秒");
+    </script>
+</body>
+</html>

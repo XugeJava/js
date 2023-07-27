@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a{
+            text-decoration: none;
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <div><a href="http://www.xugestar.top:88" >还剩<span>5</span>s自动跳转,可点击提前跳转</a></div>
+    <script>
+        // let time=100;
+        // document.querySelector('a').innerHTML = '还剩' + time-- + 's自动跳转,可点击提前跳转';
+        // setTimeout(function(){
+        //     window.location.href="http://www.xugestar.top:88";
+        // },time*1000);
+        // let time=5;
+        // const a=document.querySelector('a span')
+        // let id= setInterval(function(){
+        //     time--;
+        //     a.innerText=time;
+        //     if (time === 0) {
+        //         clearInterval(id);
+        //         window.location.href = "http://www.xugestar.top:88";
+        //     }
+
+        // },1000)
+
+        // 检测 userAgent（浏览器信息）
+            (function () {
+                const userAgent = navigator.userAgent
+                // 验证是否为Android或iPhone
+                const android = userAgent.match(/(Android);?[\s\/]+([\d.]+)?/)
+                const iphone = userAgent.match(/(iPhone\sOS)\s([\d_]+)/)
+                // 如果是Android或iPhone，则跳转至移动站点
+                if (android || iphone) {
+                    location.href = 'http://m.itcast.cn'
+                }
+            })();
+    </script> 
+</body>
+</html>

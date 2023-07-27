@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>插入节点</h3>
+    <p>在现有 dom 结构基础上插入新的元素节点</p>
+    <hr>
+    <!-- 普通盒子 -->
+    <div class="box"></div>
+    <!-- 点击按钮向 box 盒子插入节点 -->
+    <button class="btn">插入节点</button>
+    <script>
+        //监听事件
+        const btn=document.querySelector('.btn');
+        btn.addEventListener('click',function(){
+            //创建节点
+            const p=document.createElement('p');
+            p.innerText='新的标签';
+            p.className='new';
+
+
+            //clone 
+            const p2=document.querySelector('p').cloneNode(true);
+            p2.style.color='red';
+            
+            //追加节点
+            document.querySelector('.box').appendChild(p);
+            document.querySelector('.box').appendChild(p2);
+        });
+    </script>
+</body>
+</html>

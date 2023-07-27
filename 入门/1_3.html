@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let num1 = 10, num2 = 20, num3;
+        num3 = num1;
+        num1 = num2;
+        num2 = num3;
+        console.log(num1, num2);
+
+        const t1 = 10;
+        const t2 = 20;
+        // t1=20;
+        //数据类型
+        alert(typeof num1)
+        alert(typeof num2)
+
+        let user_name = '小明' // 使用单引号
+        let gender = "男" // 使用双引号
+        let str = '123' // 看上去是数字，但是用引号包裹了就成了字符串了
+        let str1 = '' // 这种情况叫空字符串
+
+        document.write(typeof user_name) // 结果为 string
+        document.write(typeof gender) // 结果为 string
+        document.write(typeof str) // 结果为 string
+
+
+        //布尔类型
+        let isLogin = true;
+        let isRegister = false;
+        document.write(typeof isLogin)
+        document.write(typeof isRegister)
+        // 只声明了变量，并末赋值
+        let tmp;
+        document.write(typeof tmp) // 结果为 undefined
+
+
+        //數組
+        let arr=['星期一','星期二'];
+        console.log(arr[1]);
+        console.log(arr.length);
+
+
+    </script>
+</body>
+
+</html>

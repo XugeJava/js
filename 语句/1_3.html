@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let a=1;
+        // let line=prompt("请输入要打印行个数:")
+        // while(a<= line){
+        //     document.write('月薪过万<br>')
+        //     a++;
+        // }
+        let money=1000;
+        var flag=true;
+        alert('你的·初始·余额是:' + money)
+        while(flag){
+        
+            let ope=prompt(`请您选择操作：
+1.存钱
+2.取钱
+3.查看余额
+4.退出
+`)
+            switch(ope){
+                case '1':
+                money=money+100;
+                alert('当前余额是' + money);
+                break;
+                case '2':
+                money=money-100;
+                alert('当前余额是' + money)
+                break;
+                case '3':
+                alert('当前余额是'+money);
+                break;
+                case '4':
+                flag=false;
+                break;
+
+            }
+        }
+    </script>
+</body>
+</html>

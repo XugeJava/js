@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // // const arr = ['red', 'blue', 'green']
+    // // const re = arr.find(function (item) {
+    // //   return item === 'blue'
+    // // })
+    // // console.log(re)
+
+    const arr = [
+      {
+        name: '小米',
+        price: 1999
+      },
+      {
+        name: '华为',
+        price: 3999
+      },
+    ]
+    //找小米 这个对象，并且返回这个对象
+    const mi = arr.find(function (item) {
+      // console.log(item)  //
+      // console.log(item.name)  //
+      console.log(111)
+      return item.name === '华为'
+    })
+    // // 1. find 查找
+    // // const mi = arr.find(item => item.name === '小米')
+    // // console.log(mi)
+    // // 2. every 每一个是否都符合条件，如果都符合返回 true ，否则返回false
+    const arr1 = [301, 201, 30]
+    const flag = arr1.every(item => item >= 20)
+    console.log(flag)
+    const flag2=arr1.some(item=>item>=20);
+    console.log(flag2)
+
+    const arr2 = [301, 201, 301]
+    const newArr=arr1.concat(arr2);
+    console.log(newArr);
+
+    arr1.sort((a,b)=>{
+      return a-b;
+    })
+    console.log(arr1)
+
+    arr1.reverse();
+    console.log(arr1)
+    const index=arr1.findIndex(el=>el===201)
+    console.log(index)
+
+    // const arr=[10,20,30];
+    // //1.join
+    // const str=arr.join(",");
+    // console.log(str)
+
+    // const res=arr.find(10);
+    // console.log(res)
+
+  </script>
+</body>
+
+</html>

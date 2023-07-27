@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var score=prompt('请输入用户高考的分数');
+        if(score>700){
+            alert('恭喜你通过');
+        }else{
+            alert('很遗憾你未痛过');
+        }
+
+        var username=prompt("请输入用户名·")
+        var password = prompt("请输入密码·")
+        if(username=="pink"&&password=="123456"){
+            alert("登录成功")
+        }else{
+            alert("用户名或密码错误")
+        }
+
+
+        //闰年
+        var year=prompt("请输入年份");
+        if(year%4==0&&year%100!=0||year%400==0){
+            alert("闰年")
+        }else{
+            alert("平年")
+        }
+    </script>
+</body>
+</html>

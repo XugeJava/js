@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>单击我出hello</button>
+    <script>
+        document.querySelector('button').addEventListener('click',function(){
+            alert('hello world')        
+        });
+        document.querySelector('button').addEventListener('mouseover',function(){
+            alert('鼠标滑过了..')
+        });
+    </script>
+</body>
+</html>

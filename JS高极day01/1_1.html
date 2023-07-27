@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 全局作用域
+    let a = 1
+    let b = 2
+
+    // 局部作用域
+    function f() {
+        let c
+        // let a = 10;
+        console.log(a) // 1 或 10
+        console.log(d) // 报错
+
+        // 局部作用域
+        function g() {
+            let d = 'yo'
+            // let b = 20;
+            console.log(b) // 2 或 20
+        }
+
+        // 调用 g 函数
+        g()
+    }
+
+    console.log(c) // 报错
+    console.log(d) // 报错
+
+    f();
+    </script>
+</body>
+</html>

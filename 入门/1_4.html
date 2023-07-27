@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //隐式转换
+        console.log(11+11);
+        console.log('11'+11);
+        console.log(11-11);
+        console.log('11'-11);
+        console.log(11*11);
+        console.log('1'*1)
+        console.log(typeof '123');
+        console.log(typeof +'123');
+        console.log(+'11'+11);
+        let str='hh'+11;
+        console.log(Number(str));
+        //尽管无法转成Number类型，但依然是Number类型
+        console.log(typeof Number(str))
+        let a=1112.2;
+        let a1=parseInt(a);
+        alert(a1);
+        let a2=parseFloat(a);
+        alert(a2);
+
+        const num = 10
+        console.log(typeof num + '11')
+        console.log(typeof (num + '11'))
+        console.log(typeof (num + +'11'))
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button class="btn1">所有的子节点</button>
+  <!-- 获取 ul 的子节点 -->
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript 基础</li>
+    <li>Web APIs</li>
+  </ul>
+  <script>
+    const btn1 = document.querySelector('.btn1')
+    btn1.addEventListener('click', function () {
+      // 父节点
+      const ul = document.querySelector('ul')
+      // 子节点
+      const li=document.querySelector('li');
+      console.log(li.parentNode)
+
+      // 所有的子节点
+      console.log(ul.childNodes)
+      // 只包含元素子节点
+      console.log(ul.children)
+    })
+
+    const lis=document.querySelector('ul li');
+    for(let i=0;i<lis.length;i++){
+      lis[i].addEventListener('click',function(){
+              console.log(this.previousSibling)
+      })
+    }
+
+  </script>
+</body>
+
+</html>

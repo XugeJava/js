@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let arr=['赵云', '黄忠', '羽', '张飞', '马超', '刘备', '曹操']
+        // let index ;
+        // while(arr.length>0){
+        //     index= Math.floor(Math.random() * arr.length);
+        //     //删除索引
+        //     document.write(arr[index])
+        //     arr.splice(index,1)
+
+        // }
+        // alert('数组都显示了..')
+        
+        // let num=Math.floor(Math.random() * 11 + 1);
+        // console.log(num);
+        // while(true){
+        //     let guess = prompt("用户，请输入一个数字:");
+
+        //     if (guess > num) {
+        //         alert("你猜的太大了");
+        //     } else if (guess < num) {
+        //         alert('你猜的太小了')
+        //     } else {
+        //         alert('你猜对了')
+        //         break;
+        //     }
+        // }
+        let flag=prompt('输入布尔类型数据');
+        let arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'];
+        let rangeColor=function(flag){
+            
+            if(flag=='true'){
+                let res = '#';
+                //todo
+                for(let i=1;i<=6;i++){
+                    let index=Math.floor(Math.random() * 16);
+                    res+=arr[index];
+                }
+                console.log(res);
+            }else{
+                //todo
+                let res='rgb('
+                for(let i=1;i<=3;i++){
+                    let index=Math.floor(Math.random() * 256);
+                    if(i==3){
+                        res+=index;
+                    }else{
+                        res += index + ","
+                    }
+
+                }
+                res+=')'
+                console.log(res);
+            }
+        }
+        rangeColor(flag);
+
+    </script>
+</body>
+</html>

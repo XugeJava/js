@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(name,age){
+            this.name=name;
+            this.age=age;
+            this.setName=(name)=>{
+                this.name=name
+            }
+            this.getName=()=>{
+                console.log(this.name)
+                return this.name;
+            }
+        }
+
+        const p1=new Person('John',20)
+        const p2=new Person('jody',24);
+        console.log(p1===p2)
+        console.log(p1.name,p2.name)
+        p1.setName('Hello');
+        console.log(p1.name,p2.name)
+        console.log(p1.setName===p2.setName)
+        console.log(p1.setName,p2.setName)
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // for(let i=0;i<5;i++){
+        //     for(let j=0;j<5;j++){
+        //         document.write(`*\n`);
+        //     }
+        //     document.write('<br>');
+        // }
+        // for (let i = 1; i <= 9; i++) {
+        //     for (let j = 1; j <= i; j++) {
+        //         document.write(`<div> ${j} x ${i} = ${j * i} </div>`);
+        //     }
+        //     document.write('<br>');
+        // }
+        let arr=[2,6,11,77,12,33,8];
+        let max=0;
+        let min=arr[0];
+        for(let i=0;i<arr.length;i++){
+            if(arr[i]>max){
+                max=arr[i];
+            }
+            if(arr[i]<min){
+                min=arr[i];
+            }
+        }
+        alert(`最大值是${max},最小值是${min}`)
+        //新增数组元素到末尾，并且返回新增数据后数组长度
+        var len=arr.push(max);
+        alert(len);
+        console.log(arr);
+        // 2. unshit 动态向数组头部添加一个单元
+        arr.unshift('VS Code')
+        console.log(arr)
+        // 3. splice 动态删除任意单元
+        arr.splice(2, 1) // 从索引值为2的位置开始删除1个单元
+        console.log(arr)
+
+        // 4. pop 删除最后一个单元
+        arr.pop()
+        console.log(arr)
+
+        // 5. shift 删除第一个单元
+        arr.shift()
+        console.log(arr)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>惦记我</button>
+    <h1></h1>
+    <script>
+        // 声明（定义）了最简单的函数，既没有形式参数，也没有返回值
+        // function sayHi() {
+        //     console.log('嗨~')
+        // }
+        // function getName(){
+        //     alert('my name is xuge');
+        // }
+        // // 函数调用，这些函数体内的代码逻辑会被执行
+        // // 函数名()
+
+        // sayHi()
+        // // 可以重复被调用，多少次都可以
+        // sayHi()
+        // getName();
+
+        // function multi(){
+        //     for (let i = 1; i <= 9; i++) {
+        //         for (let j = 1; j <= i; j++) {
+        //         document.write(` ${j} x ${i} = ${j * i} \n`);
+        //         }
+        //         document.write('<br>');
+        //     }
+        // }
+        // // multi();
+        // // multi();
+        // // multi();
+        // function getSum(array=[]){
+        //     let sum = 0;
+        //     for(let i=0;i<array.length;i++){
+        //         sum+=array[i];
+        //     }
+        //     return sum;
+        // }
+        // let total=getSum(new Array(0, 1, 2, 5, 100));
+        // console.log(total);
+        // function getMax(x,y){
+        //     return x>y?x:y;
+        // }
+        // function getMin(x,y){
+        //     return x<y?x:y;
+        // }
+        // function getArrayMaxAndMin(arr=[]){
+        //     let max=arr[0];
+        //     let min=arr[0];
+        //     for(let i=1;i<arr.length;i++){
+        //         if(max<arr[i]){
+        //             max=arr[i];
+        //         }
+        //         if(min>arr[i]){
+        //             min=arr[i];
+        //         }
+        //     }
+        //     return [max,min];
+        // }
+        // let arr=getArrayMaxAndMin(new Array(1,2,3,4,5,1,10));
+        // console.log(arr);
+
+        // let num1=0;
+        // function getNUM(){
+        //     let num1=20;
+        //     console.log(num1);
+        // }
+        // getNUM();
+
+        // function f1() {
+        //     let num = 123
+        //     function f2() {
+        //         console.log(num)
+        //     }
+        //     f2()
+        // }
+        // let num = 456
+        // f1()
+
+        // let a = 1
+        // function fn1() {
+        //     let a = 2
+        //     let b = '22'
+        //     fn2()
+        //     function fn2() {
+        //         let a = 3
+        //         fn3()
+        //         function fn3() {
+        //             let a = 4
+        //             console.log(a) //a的值 ?
+        //             console.log(b) //b的值 ?
+        //         }
+        //     }
+        // }
+        // fn1()
+
+        // let fn=function(x,y){
+        //     alert('this is  a no name function')
+        //     return x+y;
+        // }
+        // let res=fn(1,2);
+        // console.log(res);
+
+        // let btn=document.querySelector("button")
+        // // btn.addEventListener("click",function(){
+        // //     alert('弹出')
+        // // })
+        // btn.onclick=function(){
+        //     alert('弹出')
+        // }
+        // (function(){alert('方式一')})();
+
+        // let min=+prompt('用户输入秒数:')
+        // h = parseInt( min/ 60 / 60 % 24);
+        // m = parseInt(min / 60 % 60)
+        // s = parseInt(min % 60)
+        // document.querySelector("h1").innerHTML = h + "小时" + m + "分钟" + s + "秒";
+
+        // (function (x,y){
+        // x=x||0;
+        // y=y||0;
+        // console.log(x+y);
+        // })(1,2);
+        // console.log(true||1);
+        // console.log(false&&true)
+        
+        console.log(false&&20)//false
+        console.log(5<3&&20)//false
+        console.log(undefined&&20)//undefined
+        console.log(null&&20)//null
+        console.log(0&&20)//0
+        console.log(10&&20)//20
+
+
+
+
+    </script>
+</body>
+</html>

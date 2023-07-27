@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 3000px;
+        }
+
+        .aside {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            display:none;
+        }
+
+        .item {
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            padding: 0 10px;
+            cursor: pointer;
+        }
+
+        .active {
+            background-color: red;
+            color: #fff;
+        }
+
+        .content {
+            width: 660px;
+            margin: 400px auto;
+        }
+
+        .neirong {
+            height: 300px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .content1 {
+            background-color: red;
+        }
+
+        .content2 {
+            background-color: blue;
+        }
+
+        .content3 {
+            background-color: orange;
+        }
+
+        .content4 {
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="aside">
+        <div class="item active" data-name="boy">男装/女装</div>
+        <div class="item" data-name="child">儿童服装/游乐园</div>
+        <div class="item" data-name="ele">电子产品</div>
+        <div class="item" data-name="move">电影/美食</div>
+        <div id="backTop" >回到顶部</div>
+    </div>
+
+    <div class="content">
+        <div class="neirong content1 boy">男装/女装</div>
+        <div class="neirong content2 child" >儿童服装/游乐园</div>
+        <div class="neirong content3 ele">电子产品</div>
+        <div class="neirong content4 move">电影/美食</div>
+    </div>
+
+    <script>
+        (function(){
+            //利用委托处理侧边栏
+            const aside = document.querySelector('.aside');
+            const content = document.querySelector('.content');
+            window.addEventListener('scroll', function () {
+                //当大于内容区显示
+                const n = document.documentElement.scrollTop;
+                aside.style.display = n > content.offsetTop ? "block" : "none";
+            });
+            //回到顶部
+            const top = document.querySelector('#backTop');
+            top.addEventListener('click', function () {
+                window.scrollTo(0, 0);
+            });
+
+        })();
+
+        (function(){
+            //利用委托处理侧边栏
+            const aside = document.querySelector('.aside');
+            aside.addEventListener('click', function (e) {
+                console.log(e.target.dataset.name);
+                if(e.target.tagName==='DIV'&&e.target.dataset.name){
+                    //排外
+                    //其他元素去除active
+                    let old=document.querySelector('.aside .active');
+                    old.classList.remove('active');
+
+                    //当前元素添加
+                    e.target.classList.add('active');
+
+                    //点击侧边栏时跳转到对应大盒子
+                    let box=document.querySelector(`.${e.target.dataset.name}`)
+                    console.log(box);
+                    document.documentElement.scrollTop = box.offsetTop;
+                }
+            });
+        })();
+        
+        //移动到对应位置的侧边栏变色
+        window.addEventListener("scroll",function(e){
+            let old=document.querySelector('.aside .active');
+            if(old) old.classList.remove('active');
+
+            const boy=document.querySelector('.boy');
+            const child=document.querySelector('.child');
+            const ele=document.querySelector('.ele');
+            const move=document.querySelector('.move');
+            const n=document.documentElement.scrollTop;
+            if(n>=boy.offsetTop&&n<child.offsetTop) {
+                document.querySelector('[data-name="boy"]').classList.add('active');
+            }else if(n>=child.offsetTop&&n<ele.offsetTop){
+                document.querySelector('[data-name="child"]').classList.add('active');
+            }else if(n>=ele.offsetTop&&n<move.offsetTop){
+                document.querySelector('[data-name="ele"]').classList.add('active');
+            }else if(n>=move.offsetTop){
+                document.querySelector('[data-name="move"]').classList.add('active');
+            }
+        });
+        // // 1. 获元取素  
+        // const items = document.querySelectorAll('.item')
+        // // 内容的盒子获取
+        // const neirongs = document.querySelectorAll('.neirong')
+        // // 2. 左侧aside 模块 点击谁，谁高亮
+        // for (let i = 0; i < items.length; i++) {
+        //     items[i].addEventListener('click', function () {
+        //         // 找到上一个active 移除类
+        //         document.querySelector('.aside .active').classList.remove('active')
+        //         // 点击谁谁添加类
+        //         this.classList.add('active')
+        //         // 3. 右侧内容跟随走动  让页面滚动到对应的offsetTop值位置
+        //         // console.log(neirongs[i].offsetTop) 不用给单位
+        //         document.documentElement.scrollTop = neirongs[i].offsetTop
+        //     })
+        // }
+
+
+    </script>
+</body>
+
+</html>
