@@ -47,7 +47,51 @@
      *  3. 合并所有二级分类Promise对象
      *  4. 等待同时成功后，渲染页面
     */
-  
+    //const p2=axios({url:'http://hmajax.itheima.net/api/category/sub',params:{id: p1.data.data.id }})
+    //1.获取所有一级分类数据
+    axios({
+      url: 'http://hmajax.itheima.net/api/category/top'
+    }).then(res => {
+      console.log(res)
+      const secList = res.data.data.map(item => {
+        return axios({
+          url: 'http://hmajax.itheima.net/api/category/sub',
+          params: {
+            id: item.id
+          }
+        });
+
+      })
+      //3.合并所有二级分类
+      Promise.all(secList).then(res => {
+        console.log(res);
+        //const data = res.data.data;
+        // 4. 等待同时成功后，渲染页面
+      
+
+        const htmlStr = res.map(item => {
+          const dataObj = item.data.data // 取出关键数据对象
+          return `<div class="item">
+        <h3>${dataObj.name}</h3>
+        <ul>
+          ${dataObj.children.map(item => {
+            return `<li>
+            <a href="javascript:;">
+              <img src="${item.picture}">
+              <p>${item.name}</p>
+            </a>
+          </li>`
+          }).join('')}
+        </ul>
+      </div>`
+        }).join('');
+        document.querySelector('.sub-list').innerHTML = htmlStr;
+      })
+
+
+    });
+
+
   </script>
 </body>
 
